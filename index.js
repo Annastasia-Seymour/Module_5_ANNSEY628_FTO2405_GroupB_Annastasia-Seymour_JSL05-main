@@ -21,14 +21,21 @@ const guardians = {
     "Gamora": "Pop",
     // Add preferences for Drax, Rocket, and Groot
 };
-
+document.addEventListener("DOMContentLoaded", function(){
 // Function to generate playlist based on preferred genre
-function generatePlaylist(guardians, songs) {
+function generateStarLordPlaylist(guardians, songs) {
     // Use the map() function to create playlists for each Guardian
-    // Your code here
+   // Your code here
+
+const preferedGenre = guardians["Star-Lord"];
+const filteredStarLordSongs = songs.filter(song => song.genre === preferedGenre);
+document.getElementById("playlistStarLord").textContent = filteredStarLordSongs.map(song=> song.title).join(", ");
+console.log(" Star-Lord's playlist");
+
 }
 
+
 // Call generatePlaylist and display the playlists for each Guardian
-generatePlaylist(guardians, songs);
+generateStarLordPlaylist(guardians, songs);
 
-
+});
