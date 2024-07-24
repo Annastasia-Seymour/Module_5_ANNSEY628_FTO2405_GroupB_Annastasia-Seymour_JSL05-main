@@ -13,29 +13,32 @@ const songs = [
     { title: "Fooled Around and Fell in Love", artist: "Elvin Bishop", genre: "Rock" },
     // Feel free to add even more songs
 ];
+console.log(songs);
 
 
 // Object containing each Guardian's preferred genre
 const guardians = {
     "Star-Lord": "Rock",
     "Gamora": "Pop",
+    "Drax": "R&B",
+    "Rocket": "R&B",
+    "Groot": "Pop",
     // Add preferences for Drax, Rocket, and Groot
 };
-document.addEventListener("DOMContentLoaded", function(){
+
 // Function to generate playlist based on preferred genre
 function generateStarLordPlaylist(guardians, songs) {
-    // Use the map() function to create playlists for each Guardian
-   // Your code here
 
-const preferedGenre = guardians["Star-Lord"];
-const filteredStarLordSongs = songs.filter(song => song.genre === preferedGenre);
-document.getElementById("playlistStarLord").textContent = filteredStarLordSongs.map(song=> song.title).join(", ");
-console.log(" Star-Lord's playlist");
-
-}
+    const preferredGenre = guardians["Star-Lord"];
+    const filteredStarLordSongs = songs.filter(song => song.genre === preferredGenre);
+    const playlistStarLord = document.getElementById("playlistStarLord").textContent = filteredStarLordSongs.map(song => song.title).join(", ");
+    playlistStarLord.innerHTML= "Star-Lord's Playlist";
+    console.log("Star-Lord's playlist:", filteredStarLordSongs); 
+    
+    }
 
 
 // Call generatePlaylist and display the playlists for each Guardian
 generateStarLordPlaylist(guardians, songs);
 
-});
+
