@@ -29,47 +29,105 @@ const guardians = {
 // Function to generate playlist based on preferred genre
 function generateStarLordPlaylist(guardians, songs) {
 
-const preferedGenre = guardians["Star-Lord"];
-const filteredStarLordSongs = songs.filter(song => song.genre === preferedGenre);// map creates a new array with the filtered song and artist
-starLordSongs = document.getElementById("playlistStarLord").textContent = filteredStarLordSongs.map(song=> `${song.title} by ${song.artist}`).join(", ");
+    const preferedGenre = guardians["Star-Lord"];
+    const filteredStarLordSongs = songs.filter(song => song.genre === preferedGenre);// map creates a new array with the filtered song and artist
 
-console.log(" Star-Lord's playlist",starLordSongs);
+    const playlistElement = document.getElementById("playlistStarLord");
+    playlistElement.innerHTML="";
+    const heading = document.createElement("h3"); // creates h2 for guardian playlist
+    heading.textContent = "Star-Lord's Playlist";
+    playlistElement.appendChild(heading);
+
+   filteredStarLordSongs.forEach(song => {
+    const songArtist = document.createElement("p"); //i want the songs to be in a paragraph instead of list form
+    songArtist.textContent = `${song.title} by ${song.artist}, `;
+    songArtist.innerHTML = `<span class="song-title">${song.title}</span> by ${song.artist}`; // will admit i used Chat, couldnt figure out the css incorporation
+    playlistElement.appendChild(songArtist);
+   });
+    console.log(" Star-Lord's playlist",filteredStarLordSongs);
 
 }
 
 function generateGamoraPlayList(guardians,songs){
-const preferedGenre = guardians["Gamora"];
-const filteredGamoraSongs = songs.filter(song => song.genre === preferedGenre);
-document.getElementById("playlistGamora").textContent = filteredGamoraSongs.map(song=> `${song.title} by ${song.artist}`).join(", ");
-console.log("Gamora's playlist" ,filteredGamoraSongs);
+    const preferedGenre = guardians["Gamora"];
+    const songsGamora = songs.filter(song => song.genre === preferedGenre);// map creates a new array with the filtered song and artist
+
+    const playlistElement = document.getElementById("playlistGamora");
+    playlistElement.innerHTML="";
+    const heading = document.createElement("h3"); // creates h2 for guardian playlist
+    heading.textContent = "Gamora's Playlist";
+    playlistElement.appendChild(heading);
+
+   songsGamora.forEach(song => {
+    const songArtist = document.createElement("p"); //i want the songs to be in a paragrap instead of list form
+    songArtist.textContent = `${song.title} by ${song.artist}, `;
+    songArtist.innerHTML = `<span class="song-title">${song.title}</span> by ${song.artist}`; 
+        playlistElement.appendChild(songArtist);
+   });
+    console.log(" Gamora's playlist",songsGamora);
 }
 
 function generateDraxPlayList(guardians,songs){
     const preferedGenre = guardians["Drax"];
-    const filteredDraxSongs = songs.filter(song => song.genre === preferedGenre);
-    document.getElementById("playlistDrax").innerText="Drax's Playlist"
-    document.getElementById("playlistDrax").textContent = filteredDraxSongs.map(song=> `${song.title} by ${song.artist}`).join(", ");
-    
-    console.log("Drax's playlist" ,filteredDraxSongs);
+    const songsDrax = songs.filter(song => song.genre === preferedGenre);// map creates a new array with the filtered song and artist
+
+    const playlistElement = document.getElementById("playlistDrax");
+    playlistElement.innerHTML="";
+    const heading = document.createElement("h3"); // creates h2 for guardian playlist
+    heading.textContent = "Drax's Playlist";
+    playlistElement.appendChild(heading);
+
+   songsDrax.forEach(song => {
+    const songArtist = document.createElement("p"); //i want the songs to be in a paragrap instead of list form
+    songArtist.textContent = `${song.title} by ${song.artist}, `;
+    songArtist.innerHTML = `<span class="song-title">${song.title}</span> by ${song.artist}`; 
+        playlistElement.appendChild(songArtist);
+   });
+    console.log(" Drax's playlist",songsDrax);
     }
 
 function generateRocketPlayList(guardians,songs){
     const preferedGenre = guardians["Rocket"];
-    const filteredRocketSongs = songs.filter(song => song.genre === preferedGenre);
-    document.getElementById("playlistRocket").textContent = filteredRocketSongs.map(song=> `${song.title} by ${song.artist}`).join(", ");
-    console.log("Rocket's playlist" ,filteredRocketSongs);
+    const songsRocket = songs.filter(song => song.genre === preferedGenre);// map creates a new array with the filtered song and artist
+
+    const playlistElement = document.getElementById("playlistRocket");
+    playlistElement.innerHTML="";
+    const heading = document.createElement("h3"); // creates h2 for guardian playlist
+    heading.textContent = "Rocket's Playlist";
+    playlistElement.appendChild(heading);
+
+   songsRocket.forEach(song => {
+    const songArtist = document.createElement("p"); //i want the songs to be in a paragrap instead of list form
+    songArtist.textContent = `${song.title} by ${song.artist}, `;
+    songArtist.innerHTML = `<span class="song-title">${song.title}</span> by ${song.artist}`; 
+        playlistElement.appendChild(songArtist);
+   });
+    console.log(" Rocket's playlist",songsRocket);
     }
 
 
 function generateGrootPlayList(guardians,songs){
     const preferedGenre = guardians["Groot"];
-    const filteredGrootSongs = songs.filter(song => song.genre === preferedGenre);
-    document.getElementById("playlistGroot").textContent = filteredGrootSongs.map(song=> `${song.title} by ${song.artist}`).join(", ");
-    console.log("Groot's playlist" ,filteredGrootSongs);
+    const songsGroot = songs.filter(song => song.genre === preferedGenre);// map creates a new array with the filtered song and artist
+
+    const playlistElement = document.getElementById("playlistGroot");
+    playlistElement.innerHTML="";
+    const heading = document.createElement("h3"); // creates h2 for guardian playlist
+    heading.textContent = "Groot's Playlist";
+    playlistElement.appendChild(heading);
+
+   songsGroot.forEach(song => {
+    const songArtist = document.createElement("p"); //i want the songs to be in a paragrap instead of list form
+    songArtist.textContent = `${song.title} by ${song.artist}, `;
+    songArtist.innerHTML = `<span class="song-title">${song.title}</span> by ${song.artist}`; 
+        playlistElement.appendChild(songArtist);
+   });
+    console.log(" Groot's playlist",songsGroot);
     }
 
 // I need to figure out why it deletes the name playlist on top , add css styling
-
+//made alotta work for my self but at least each is displaying seperately , not efficient but helped to compartmentalize
+//will admit i struggled with this one , will need to go over content again
 
 
 

@@ -5,6 +5,7 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
+    
 }
 
 h1 {
@@ -12,9 +13,10 @@ h1 {
     font-family: 'Pacifico', cursive; /* Fun font for headings */
     font-size: 36px; /* Larger font size */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for headings */
+    display: grid;
 }
 
-.playlist {
+.playlist{
     margin: 20px;
     padding: 20px; /* Increased padding */
     background-color: #6A5ACD; /* Purple background for playlists */
@@ -23,6 +25,7 @@ h1 {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for playlists */
     font-weight: semi-bold;
 }
+
 
 .song {
     margin: 10px 0; /* Increased margin */
